@@ -7,7 +7,7 @@ shx rm -rf $DIST
 shx mkdir -p $DIST
 
 echo "> Building next"
-next build || exit 1
+next build && next export || exit 1
 
 echo "> Copying .next to dist folder"
 
