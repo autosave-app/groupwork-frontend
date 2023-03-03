@@ -1,0 +1,125 @@
+{
+  "../components/PasswordStrengthBar.tsx -> react-password-strength-bar": {
+    "id": 24180,
+    "files": [
+      "static/chunks/19b7e487.fc1849eef6fc777c.js"
+    ]
+  },
+  "../components/collective-page/hero/Hero.js -> ./HeroBackgroundCropperModal": {
+    "id": 62021,
+    "files": [
+      "static/chunks/4931.5bd11ace15909be0.js",
+      "static/chunks/2021.7cf235c06b2a3422.js"
+    ]
+  },
+  "../components/collective-page/hero/Hero.js -> ./HeroEventDetails": {
+    "id": 32645,
+    "files": [
+      "static/chunks/2645.667c0d4ef28d8e2b.js"
+    ]
+  },
+  "../components/collective-page/hero/HeroAvatar.js -> react-dropzone": {
+    "id": 55162,
+    "files": []
+  },
+  "../components/collective-page/sections/About.js -> ../../RichTextEditor": {
+    "id": 59139,
+    "files": [
+      "static/chunks/a697e47d-a7e2912160156c3a.js",
+      "static/chunks/9139-88e128ea56b0072d.js"
+    ]
+  },
+  "../components/collective-page/sections/Budget/ContributionsBudget.js -> react-apexcharts": {
+    "id": 47229,
+    "files": [
+      "static/chunks/6c44d60f.bba8fab35408ed67.js",
+      "static/chunks/7229.461796df1fa1bc64.js"
+    ]
+  },
+  "../components/collective-page/sections/Budget/ExpenseBudget.js -> react-apexcharts": {
+    "id": 47229,
+    "files": [
+      "static/chunks/6c44d60f.bba8fab35408ed67.js",
+      "static/chunks/7229.461796df1fa1bc64.js"
+    ]
+  },
+  "../components/collective-page/sections/Contribute.js -> ../../contribute-cards/AdminContributeCardsContainer": {
+    "id": 82150,
+    "files": [
+      "static/chunks/3135-08abb3b1149b00fc.js",
+      "static/chunks/7038-e00c0700158b55d9.js",
+      "static/chunks/2150-fd22771f70d252d3.js",
+      "static/chunks/4984.dcd9a1305cb93929.js"
+    ]
+  },
+  "../components/collective-page/sections/Goals.js -> ../../GoalsCover": {
+    "id": 75593,
+    "files": [
+      "static/chunks/5593.604e07eb5084f233.js"
+    ]
+  },
+  "../components/host-dashboard/reports-section/HostFeesSectionHistorical.js -> react-apexcharts": {
+    "id": 47229,
+    "files": [
+      "static/chunks/6c44d60f.bba8fab35408ed67.js",
+      "static/chunks/7229.461796df1fa1bc64.js"
+    ]
+  },
+  "../components/host-dashboard/reports-section/TotalMoneyManagedHistorical.js -> react-apexcharts": {
+    "id": 47229,
+    "files": [
+      "static/chunks/6c44d60f.bba8fab35408ed67.js",
+      "static/chunks/7229.461796df1fa1bc64.js"
+    ]
+  },
+  "../components/host-dashboard/reports-section/TransactionsOverviewSection.js -> react-apexcharts": {
+    "id": 47229,
+    "files": [
+      "static/chunks/6c44d60f.bba8fab35408ed67.js",
+      "static/chunks/7229.461796df1fa1bc64.js"
+    ]
+  },
+  "../components/tier-page/TierVideo.js -> ../VideoLinkerBox": {
+    "id": 94782,
+    "files": [
+      "static/chunks/VideoLinkerBox.9cd1fcefbd58eb09.js"
+    ]
+  },
+  "../node_modules/next/dist/client/index.js -> ../pages/_app": {
+    "id": 80942,
+    "files": [
+      "static/chunks/942.7e0f90bd4b52a322.js"
+    ]
+  },
+  "../node_modules/next/dist/client/index.js -> ../pages/_error": {
+    "id": 91203,
+    "files": [
+      "static/chunks/1203.b726e0435c11c489.js"
+    ]
+  },
+  "collective-page.js -> ../components/GuestUserProfile": {
+    "id": 92873,
+    "files": [
+      "static/chunks/GuestUserProfile.4b56ded60f825826.js"
+    ]
+  },
+  "collective-page.js -> ../components/IncognitoUserCollective": {
+    "id": 1549,
+    "files": [
+      "static/chunks/IncognitoUserCollective.4946332b6c92dd51.js"
+    ]
+  },
+  "collective-page.js -> ../components/PledgedCollectivePage": {
+    "id": 17487,
+    "files": [
+      "static/chunks/PledgedCollectivePage.c289df93adc03abe.js"
+    ]
+  },
+  "collective-page.js -> ../components/onboarding-modal/OnboardingModal": {
+    "id": 70730,
+    "files": [
+      "static/chunks/730-c9509134be6985a1.js",
+      "static/chunks/OnboardingModal.6d4cd24b8d27b2a5.js"
+    ]
+  }
+}
