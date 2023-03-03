@@ -8,6 +8,7 @@ const nextConfig = {
   productionBrowserSourceMaps: true,
   images: {
     disableStaticImages: true,
+    unoptimized: true,
   },
   webpack: (config, { webpack, isServer, buildId }) => {
     config.plugins.push(
