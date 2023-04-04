@@ -1,4 +1,4 @@
-import { randomEmail } from '../support/faker';
+import { randomEmail, randomSlug } from '../support/faker';
 
 describe('New expense flow', () => {
   describe('new expense when logged out', () => {
@@ -46,7 +46,7 @@ describe('New expense flow', () => {
       cy.get('textarea[name="payoutMethod.data.content"]').type('Bank Account: 007');
       cy.getByDataCy('expense-next').click();
 
-      cy.get('input[name="description"]').type('Brussels January team retreat');
+      cy.get('textarea[name="description"]').type('Brussels January team retreat');
 
       cy.getByDataCy('expense-summary-btn').should('be.disabled');
       // Upload 2 files to the multi-files dropzone
@@ -108,7 +108,7 @@ describe('New expense flow', () => {
       cy.getByDataCy('more-actions').click();
       cy.getByDataCy('edit-expense-btn').click();
       cy.getByDataCy('expense-next').click();
-      cy.get('input[name="description"]').type(' edited');
+      cy.get('textarea[name="description"]').type(' edited');
       cy.get('input[name="items[0].description"]').type(' but not too expensive');
       cy.get('input[name="items[0].amount"]').type('{selectall}111');
       // Add new item
@@ -164,7 +164,7 @@ describe('New expense flow', () => {
       cy.get('textarea[name="payoutMethod.data.content"]').type('make it rain');
       cy.getByDataCy('expense-next').click();
 
-      cy.get('input[name="description"]').type('Brussels January team retreat');
+      cy.get('textarea[name="description"]').type('Brussels January team retreat');
 
       cy.getByDataCy('expense-multi-attachments-dropzone').selectFile(
         {
@@ -226,7 +226,7 @@ describe('New expense flow', () => {
       cy.get('textarea[name="payoutMethod.data.content"]').type('Bank Account: 007');
       cy.getByDataCy('expense-next').click();
       // Fill the form with valid data
-      cy.get('input[name="description"]').type('March invoice');
+      cy.get('textarea[name="description"]').type('March invoice');
       cy.get('input[name="items[0].description"]').type('Peeling potatoes');
       cy.getByDataCy('currency-picker').click();
       cy.contains('[data-cy="select-option"]', 'US Dollar').click();
@@ -249,7 +249,7 @@ describe('New expense flow', () => {
         cy.getByDataCy('expense-next').click();
         // TODO: Make sure there's no payout method input visible
 
-        cy.get('input[name="description"]').type('Service Invoice');
+        cy.get('textarea[name="description"]').type('Service Invoice');
         cy.get('input[name="items[0].amount"]').type('{selectall}4200');
 
         cy.getByDataCy('expense-summary-btn').click();
@@ -273,7 +273,7 @@ describe('New expense flow', () => {
         cy.get('input[name="payee.email"]').type(inviteeEmail);
         cy.get('[data-cy="expense-next"]').click();
 
-        cy.get('input[name="description"]').type('Service Invoice');
+        cy.get('textarea[name="description"]').type('Service Invoice');
         cy.get('input[name="items[0].amount"]').type('{selectall}4200');
 
         cy.getByDataCy('expense-summary-btn').click();
@@ -327,7 +327,6 @@ describe('New expense flow', () => {
             email: inviteeEmail,
             redirect: `/${createdExpense.collective}/expenses/${createdExpense.expenseId}`,
           });
-          cy.visit(`/${createdExpense.collective}/expenses/${createdExpense.expenseId}`);
         });
 
         cy.getByDataCy('expense-status-msg').should('contain', 'Pending');
@@ -339,19 +338,20 @@ describe('New expense flow', () => {
 
       it('can invite a third-party organization to submit an expense', () => {
         const inviteeEmail = randomEmail();
+        const slug = randomSlug();
         cy.getByDataCy('radio-expense-type-INVOICE').click();
 
         cy.getByDataCy('select-expense-payee').click();
         cy.getByDataCy('collective-picker-invite-button').click();
         cy.getByDataCy('payee-type-org').click();
-        cy.get('input[name="payee.organization.name"]').type('Hollywood');
+        cy.get('input[name="payee.organization.name"]').type(slug);
         cy.get('input[name="payee.organization.description"]').type('We make movies.');
         cy.get('input[name="payee.organization.website"]').type('http://hollywood.com');
-        cy.get('input[name="payee.name"]').type('Nicolas Cage');
+        cy.get('input[name="payee.name"]').type('Willem Dafoe');
         cy.get('input[name="payee.email"]').type(inviteeEmail);
         cy.get('[data-cy="expense-next"]').click();
 
-        cy.get('input[name="description"]').type('Service Invoice');
+        cy.get('textarea[name="description"]').type('Service Invoice');
         cy.get('input[name="items[0].amount"]').type('{selectall}4200');
 
         cy.getByDataCy('expense-summary-btn').click();
@@ -363,7 +363,7 @@ describe('New expense flow', () => {
           'contain',
           `An invitation to submit this expense has been sent to ${inviteeEmail}`,
         );
-        cy.getByDataCy('expense-summary-payee').should('contain', 'Hollywood');
+        cy.getByDataCy('expense-summary-payee').should('contain', slug);
 
         // Log out and submit as invitee...
         cy.url({ log: true })
@@ -405,11 +405,10 @@ describe('New expense flow', () => {
             email: inviteeEmail,
             redirect: `/${createdExpense.collective}/expenses/${createdExpense.expenseId}`,
           });
-          cy.visit(`/${createdExpense.collective}/expenses/${createdExpense.expenseId}`);
         });
         cy.getByDataCy('expense-status-msg').should('contain', 'Pending');
         cy.getByDataCy('expense-author').should('contain', 'Invited by');
-        cy.getByDataCy('expense-summary-payee').should('contain', 'Hollywood');
+        cy.getByDataCy('expense-summary-payee').should('contain', slug);
         cy.getByDataCy('expense-summary-host').should('contain', 'Open Source Collective org');
         cy.getByDataCy('expense-summary-payout-method-data').should('contain', 'make it rain');
       });
@@ -447,7 +446,7 @@ describe('New expense flow', () => {
       cy.getByDataCy('expense-next').click();
 
       // Fill details
-      cy.get('input[name="description"]').type('Brussels January team retreat');
+      cy.get('textarea[name="description"]').type('Brussels January team retreat');
       cy.get('input[name="items[0].description"]').type('TShirts');
       cy.get('input[name="items[0].amount"]').type('{selectall}112');
       cy.getByDataCy('currency-picker').click();
@@ -579,7 +578,7 @@ describe('New expense flow', () => {
       cy.getByDataCy('confirmation-modal-continue').click();
       cy.url().should('eq', `${Cypress.config().baseUrl}/${collective.slug}/expenses`);
       cy.visit(expenseUrl);
-      cy.getByDataCy('error-page').contains('Not found');
+      cy.getByDataCy('error-page').contains('Page not found');
     });
 
     it('Displays expense policy', () => {
